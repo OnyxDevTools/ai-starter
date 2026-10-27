@@ -1,0 +1,774 @@
+{
+  "tables": [
+    {
+      "name": "Workspace",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdBy",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "String",
+          "isNullable": false
+        }
+      ],
+      "indexes": [],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "Membership",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "workspaceId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "active",
+          "type": "Boolean",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "String",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "workspaceId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "userId",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "Conversation",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "workspaceId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "ownerUid",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "mode",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "activeRunId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "deleted",
+          "type": "Boolean",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "String",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "workspaceId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "ownerUid",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "Message",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "conversationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "workspaceId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "ownerUid",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "runId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "role",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "state",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "String",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "conversationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "workspaceId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "ownerUid",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "runId",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "GenerationRun",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "conversationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "workspaceId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "ownerUid",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "userMessageId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "assistantMessageId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "requestedModel",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "actualModel",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "providerRequestId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "mode",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "status",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "cancelRequested",
+          "type": "Boolean",
+          "isNullable": false
+        },
+        {
+          "name": "useKnowledge",
+          "type": "Boolean",
+          "isNullable": false
+        },
+        {
+          "name": "attempt",
+          "type": "Int",
+          "isNullable": false
+        },
+        {
+          "name": "errorCode",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "promptTokens",
+          "type": "Int",
+          "isNullable": true
+        },
+        {
+          "name": "completionTokens",
+          "type": "Int",
+          "isNullable": true
+        },
+        {
+          "name": "totalTokens",
+          "type": "Int",
+          "isNullable": true
+        },
+        {
+          "name": "createdAt",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "expiresAt",
+          "type": "String",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "conversationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "workspaceId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "ownerUid",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "Attachment",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "conversationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "workspaceId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "ownerUid",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "documentId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "mimeType",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "size",
+          "type": "Int",
+          "isNullable": false
+        },
+        {
+          "name": "status",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "String",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "conversationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "workspaceId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "ownerUid",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "MessageAttachment",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "messageId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "attachmentId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "conversationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "workspaceId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "ownerUid",
+          "type": "String",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "messageId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "conversationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "workspaceId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "ownerUid",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "ToolActivity",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "conversationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "workspaceId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "ownerUid",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "runId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "callId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "managedBy",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "status",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "argumentsText",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "outputText",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "query",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "approvalId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "String",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "conversationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "workspaceId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "ownerUid",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "runId",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "Source",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "conversationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "workspaceId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "ownerUid",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "runId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "documentId",
+          "type": "String",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "conversationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "workspaceId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "ownerUid",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "runId",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "KnowledgeArticle",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "workspaceId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "ownerUid",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "body",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "String",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "workspaceId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "ownerUid",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "title",
+          "type": "SEARCHABLE",
+          "searchSupport": "BOTH"
+        },
+        {
+          "name": "body",
+          "type": "SEARCHABLE",
+          "searchSupport": "BOTH"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "MutationLock",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "operation",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "acquiredAt",
+          "type": "String",
+          "isNullable": false
+        }
+      ],
+      "indexes": [],
+      "resolvers": [],
+      "triggers": []
+    }
+  ]
+}

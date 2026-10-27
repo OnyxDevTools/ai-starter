@@ -1,0 +1,11 @@
+[
+  {
+    "ownerUid": "replace-with-verified-firebase-uid",
+    "workspaceId": "replace-with-workspace-uuid",
+    "databaseId": "replace-with-dedicated-knowledge-database-id",
+    "configPath": "/absolute/path/to/ignored/config/onyx-ai-readonly.json",
+    "agentIds": ["replace-with-published-onyx-agent-id"],
+    "readOnlyPolicyReviewed": true,
+    "policyEvidence": "Replace with a reference to the reviewed key and agent permissions for this exact user/workspace database."
+  }
+]
